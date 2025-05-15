@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ร้านเสื้อสายซิ่ง</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Kanit', sans-serif;
+      background-color: #111;
+      color: #fff;
+    }
+    header {
+      background-color: #FFD700;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav a {
+      color: #111;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .hero {
+      background: url('https://via.placeholder.com/1200x400?text=โชว์ผลงานเท่ๆ') center/cover;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+    .section {
+      padding: 2rem;
+      background-color: #1a1a1a;
+      margin-top: 1rem;
+    }
+    .section h2 {
+      color: #FFD700;
+      margin-bottom: 1rem;
+    }
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+    .product {
+      background-color: #222;
+      padding: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .product:hover {
+      transform: scale(1.05);
+    }
+    footer {
+      background-color: #FFD700;
+      color: #111;
+      text-align: center;
+      padding: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div>เสื้อสายซิ่ง</div>
+    <nav>
+      <a href="#home">หน้าแรก</a>
+      <a href="#about">เกี่ยวกับเรา</a>
+      <a href="#contact">ติดต่อ</a>
+      <a href="#zx">เสื้อซิ่ง</a>
+      <a href="#sport">เสื้อกีฬา</a>
+      <a href="#org">เสื้อองค์กร</a>
+      <a href="#set">ชุดเซท</a>
+      <a href="#cotton">เสื้อคอตตอน</a>
+      <a href="#print">เสื้อพิมพ์ลาย</a>
+      <a href="#hood">เสื้อฮู้ด</a>
+    </nav>
+  </header>
+  <div class="hero" id="home">
+    รวมความเท่ ใส่แล้วหล่อขึ้น 100%
+  </div>
+  <div class="section" id="about">
+    <h2>เกี่ยวกับเรา</h2>
+    <p>เราคือสายแฟ x สายซิ่ง สร้างเสื้อที่ไม่ใช่แค่ใส่ แต่คือสไตล์ที่เป็นตัวคุณ</p>
+  </div>
+  <div class="section" id="zx">
+    <h2>เสื้อซิ่ง</h2>
+    <div class="products">
+      <div class="product" onclick="alert('ดูรายละเอียดสินค้า')">เสื้อซิ่งรุ่น 001</div>
+      <div class="product" onclick="alert('ดูรายละเอียดสินค้า')">เสื้อซิ่งรุ่น 002</div>
+    </div>
+  </div>
+  <div class="section" id="sport">
+    <h2>เสื้อกีฬา</h2>
+    <div class="products">
+      <div class="product" onclick="alert('ดูรายละเอียดสินค้า')">เสื้อทีมเตะบอล</div>
+    </div>
+  </div>
+  <div class="section" id="org">
+    <h2>เสื้อองค์กร</h2>
+    <div class="products">
+      <div class="product" onclick="alert('ดูรายละเอียดสินค้า')">เสื้อบริษัทเท่ๆ</div>
+    </div>
+  </div>
+  <div class="section" id="set">
+    <h2>ชุดเซท</h2>
+    <div class="products">
+      <div class="product" onclick="alert('ดูรายละเอียดสินค้า')">เซทเสื้อ-กางเกง</div>
+    </div>
+  </div>
+  <div class="section" id="cotton">
+    <h2>เสื้อคอตตอน</h2>
+    <div class="products">
+      <div class="product" onclick="alert('ดูรายละเอียดสินค้า')">คอตตอนพรีเมียม</div>
+    </div>
+  </div>
+  <div class="section" id="print">
+    <h2>เสื้อพิมพ์ลาย</h2>
+    <div class="products">
+      <div class="product" onclick="alert('ดูรายละเอียดสินค้า')">พิมพ์ลายจัดเต็ม</div>
+    </div>
+  </div>
+  <div class="section" id="hood">
+    <h2>เสื้อฮู้ด</h2>
+    <div class="products">
+      <div class="product" onclick="alert('ดูรายละเอียดสินค้า')">ฮู้ดสายแฟ</div>
+    </div>
+  </div>
+  <div class="section" id="contact">
+    <h2>ติดต่อเรา</h2>
+    <p>Line: @saisingstudio | IG: @saisingwear | Tel: 099-999-9999</p>
+  </div>
+  <footer>
+    &copy; 2025 เสื้อสายซิ่ง - สไตล์หล่อทะลุไฟท้าย
+  </footer>
+</body>
+</html>
