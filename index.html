@@ -1,68 +1,174 @@
-import React from "react";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-
-const categories = [
-  "เสื้อซิ่ง",
-  "เสื้อกีฬา",
-  "เสื้อองค์กร",
-  "ชุดเซท",
-  "เสื้อคอตตอน",
-  "เสื้อพิมพ์ลาย",
-  "เสื้อฮู้ด",
-];
-
-const products = [
-  {
-    id: 1,
-    name: "เสื้อซิ่งลายเท่",
-    image: "https://placehold.co/300x200",
-    category: "เสื้อซิ่ง",
-  },
-  {
-    id: 2,
-    name: "เสื้อทีมสายลุย",
-    image: "https://placehold.co/300x200",
-    category: "เสื้อกีฬา",
-  },
-];
-
-export default function Home() {
-  return (
-    <div className="min-h-screen bg-gray-950 text-white">
-      <header className="p-4 shadow-md bg-gray-900">
-        <h1 className="text-2xl font-bold">🔥 ร้านเสื้อสายเท่</h1>
-        <nav className="mt-2 flex flex-wrap gap-3 text-sm">
-          <a href="#" className="hover:underline">หน้าแรก</a>
-          <a href="#" className="hover:underline">เกี่ยวกับเรา</a>
-          <a href="#" className="hover:underline">ติดต่อ</a>
-          {categories.map((cat) => (
-            <a key={cat} href="#" className="hover:underline">
-              {cat}
-            </a>
-          ))}
-        </nav>
-      </header>
-
-      <main className="p-6">
-        <h2 className="text-xl font-semibold mb-4">สินค้าของเรา</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          {products.map((product) => (
-            <Card key={product.id} className="bg-gray-800 text-white">
-              <img src={product.image} alt={product.name} className="w-full h-48 object-cover rounded-t" />
-              <CardContent className="p-4">
-                <h3 className="text-lg font-bold">{product.name}</h3>
-                <p className="text-sm text-gray-400">หมวด: {product.category}</p>
-                <Button className="mt-2 w-full">ดูรายละเอียด</Button>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </main>
-
-      <footer className="p-4 bg-gray-900 mt-10 text-center text-sm text-gray-400">
-        © 2025 ร้านเสื้อสายเท่ - ทุกลิขสิทธิ์ได้รับการคุ้มครอง
-      </footer>
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ร้านเสื้อสายซิ่ง</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Kanit', sans-serif;
+      background-color: #111;
+      color: #fff;
+    }
+    header {
+      background-color: #FFD700;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav a {
+      color: #111;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .hero {
+      background: url('https://drive.google.com/uc?export=view&id=1HlGdJhcIQvAHfgbFsy4PWssvXYNUuiYq') center/cover;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+    .section {
+      padding: 2rem;
+      background-color: #1a1a1a;
+      margin-top: 1rem;
+    }
+    .section h2 {
+      color: #FFD700;
+      margin-bottom: 1rem;
+    }
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+    .product {
+      background-color: #222;
+      padding: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.2s;
+      text-align: center;
+    }
+    .product img {
+      max-width: 100%;
+      border-radius: 6px;
+      margin-bottom: 0.5rem;
+    }
+    .product:hover {
+      transform: scale(1.05);
+    }
+    footer {
+      background-color: #FFD700;
+      color: #111;
+      text-align: center;
+      padding: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <img src="https://drive.google.com/uc?export=view&id=1HlGdJhcIQvAHfgbFsy4PWssvXYNUuiYq" alt="โลโก้ร้าน" style="height: 40px;">
     </div>
-  );
-}
+    <nav>
+      <a href="#home">หน้าแรก</a>
+      <a href="#about">เกี่ยวกับเรา</a>
+      <a href="#contact">ติดต่อ</a>
+      <a href="#zx">เสื้อซิ่ง</a>
+      <a href="#sport">เสื้อกีฬา</a>
+      <a href="#org">เสื้อองค์กร</a>
+      <a href="#set">ชุดเซท</a>
+      <a href="#cotton">เสื้อคอตตอน</a>
+      <a href="#print">เสื้อพิมพ์ลาย</a>
+      <a href="#hood">เสื้อฮู้ด</a>
+    </nav>
+  </header>
+  <div class="hero" id="home">
+  </div>
+  <div class="section" id="about">
+    <h2>เกี่ยวกับเรา</h2>
+    <p>เราคือสายแฟ x สายซิ่ง สร้างเสื้อที่ไม่ใช่แค่ใส่ แต่คือสไตล์ที่เป็นตัวคุณ</p>
+  </div>
+  <div class="section" id="zx">
+    <h2>เสื้อซิ่ง</h2>
+    <div class="products">
+      <div class="product" onclick="alert('ดูรายละเอียดสินค้า')">
+        <img src="https://drive.google.com/uc?export=view&id=1HlGdJhcIQvAHfgbFsy4PWssvXYNUuiYq" alt="เสื้อซิ่งรุ่น 001">
+        เสื้อซิ่งรุ่น 001
+      </div>
+      <div class="product" onclick="alert('ดูรายละเอียดสินค้า')">
+        <img src="https://via.placeholder.com/200x200?text=ZX002" alt="เสื้อซิ่งรุ่น 002">
+        เสื้อซิ่งรุ่น 002
+      </div>
+    </div>
+  </div>
+  <div class="section" id="sport">
+    <h2>เสื้อกีฬา</h2>
+    <div class="products">
+      <div class="product" onclick="alert('ดูรายละเอียดสินค้า')">
+        <img src="https://via.placeholder.com/200x200?text=Sport" alt="เสื้อทีมเตะบอล">
+        เสื้อทีมเตะบอล
+      </div>
+    </div>
+  </div>
+  <div class="section" id="org">
+    <h2>เสื้อองค์กร</h2>
+    <div class="products">
+      <div class="product" onclick="alert('ดูรายละเอียดสินค้า')">
+        <img src="https://via.placeholder.com/200x200?text=Org" alt="เสื้อบริษัทเท่ๆ">
+        เสื้อบริษัทเท่ๆ
+      </div>
+    </div>
+  </div>
+  <div class="section" id="set">
+    <h2>ชุดเซท</h2>
+    <div class="products">
+      <div class="product" onclick="alert('ดูรายละเอียดสินค้า')">
+        <img src="https://via.placeholder.com/200x200?text=Set" alt="เซทเสื้อ-กางเกง">
+        เซทเสื้อ-กางเกง
+      </div>
+    </div>
+  </div>
+  <div class="section" id="cotton">
+    <h2>เสื้อคอตตอน</h2>
+    <div class="products">
+      <div class="product" onclick="alert('ดูรายละเอียดสินค้า')">
+        <img src="https://via.placeholder.com/200x200?text=Cotton" alt="คอตตอนพรีเมียม">
+        คอตตอนพรีเมียม
+      </div>
+    </div>
+  </div>
+  <div class="section" id="print">
+    <h2>เสื้อพิมพ์ลาย</h2>
+    <div class="products">
+      <div class="product" onclick="alert('ดูรายละเอียดสินค้า')">
+        <img src="https://via.placeholder.com/200x200?text=Print" alt="พิมพ์ลายจัดเต็ม">
+        พิมพ์ลายจัดเต็ม
+      </div>
+    </div>
+  </div>
+  <div class="section" id="hood">
+    <h2>เสื้อฮู้ด</h2>
+    <div class="products">
+      <div class="product" onclick="alert('ดูรายละเอียดสินค้า')">
+        <img src="https://via.placeholder.com/200x200?text=Hood" alt="ฮู้ดสายแฟ">
+        ฮู้ดสายแฟ
+      </div>
+    </div>
+  </div>
+  <div class="section" id="contact">
+    <h2>ติดต่อเรา</h2>
+    <p>Line: @saisingstudio | IG: @saisingwear | Tel: 099-999-9999</p>
+  </div>
+  <footer>
+    &copy; 2025 เสื้อสายซิ่ง - สไตล์หล่อทะลุไฟท้าย
+  </footer>
+</body>
+</html>
